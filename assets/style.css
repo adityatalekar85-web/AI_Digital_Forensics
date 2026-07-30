@@ -1,0 +1,1244 @@
+:root {
+    --bg: #f7f2ea;
+    --paper: #fffdf8;
+    --panel: rgba(255, 253, 248, 0.88);
+    --navy: #102033;
+    --navy-2: #1f3a4d;
+    --teal: #2aa9a1;
+    --teal-soft: #dff3f0;
+    --gold: #b88a3d;
+    --gold-soft: #f0e3c9;
+    --ink: #172033;
+    --muted: #687489;
+    --line: rgba(16, 32, 51, 0.14);
+    --shadow: 0 24px 70px rgba(16, 32, 51, 0.14);
+}
+
+.stApp {
+    background:
+        radial-gradient(circle at 78% 10%, rgba(42, 169, 161, 0.16), transparent 28%),
+        radial-gradient(circle at 18% 18%, rgba(184, 138, 61, 0.14), transparent 26%),
+        linear-gradient(180deg, #fbf8f2 0%, #f3eee4 48%, #eef5f3 100%);
+    color: var(--ink);
+}
+
+.stApp::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(16, 32, 51, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(16, 32, 51, 0.035) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), transparent 72%);
+    z-index: 0;
+}
+
+.stApp > * {
+    position: relative;
+    z-index: 1;
+}
+
+.block-container {
+    max-width: 1280px;
+    padding-top: 1.2rem;
+    padding-bottom: 3.5rem;
+}
+
+section[data-testid="stSidebar"] {
+    background:
+        linear-gradient(180deg, rgba(16, 32, 51, 0.96), rgba(31, 58, 77, 0.94)),
+        url("luxury-cyber-hero.svg");
+    background-size: cover;
+    background-position: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 16px 0 46px rgba(16, 32, 51, 0.18);
+}
+
+section[data-testid="stSidebar"] [data-testid="stSidebarUserContent"] {
+    padding-top: 1.2rem;
+    max-height: 100vh;
+    overflow-y: auto;
+    padding-bottom: 2rem;
+}
+
+section[data-testid="stSidebar"] [data-testid="stSidebarUserContent"]::-webkit-scrollbar {
+    width: 8px;
+}
+
+section[data-testid="stSidebar"] [data-testid="stSidebarUserContent"]::-webkit-scrollbar-thumb {
+    background: rgba(245, 223, 171, 0.38);
+    border-radius: 999px;
+}
+
+section[data-testid="stSidebar"] div[role="radiogroup"] {
+    max-height: calc(100vh - 250px);
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 4px 20px;
+}
+
+.sidebar-logo,
+.brand-mark {
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #f5dfab, var(--gold));
+    color: var(--navy);
+    font-weight: 950;
+    letter-spacing: 0;
+    box-shadow: 0 16px 34px rgba(184, 138, 61, 0.22);
+}
+
+.sidebar-title {
+    color: #ffffff;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 1.1;
+}
+
+.sidebar-subtitle {
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 12px;
+}
+
+section[data-testid="stSidebar"] div[role="radiogroup"] label {
+    min-height: 42px;
+    padding: 7px 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.06);
+    transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+section[data-testid="stSidebar"] div[role="radiogroup"] label:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(245, 223, 171, 0.42);
+    transform: translateX(2px);
+}
+
+section[data-testid="stSidebar"] div[role="radiogroup"] label:has(input:checked) {
+    background: linear-gradient(90deg, rgba(245, 223, 171, 0.22), rgba(42, 169, 161, 0.12));
+    border-color: rgba(245, 223, 171, 0.62);
+}
+
+section[data-testid="stSidebar"] label p {
+    color: #ffffff;
+    font-weight: 760;
+}
+
+.user-chip {
+    margin: 10px 0 12px;
+    padding: 11px 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+}
+
+.user-name {
+    display: block;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 13px;
+}
+
+.user-role {
+    display: block;
+    color: #f5dfab;
+    font-size: 11px;
+    text-transform: uppercase;
+    margin-top: 3px;
+}
+
+.app-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: rgba(255, 253, 248, 0.78);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 12px 34px rgba(16, 32, 51, 0.08);
+}
+
+.app-topbar strong {
+    display: block;
+    color: var(--navy);
+    font-size: 14px;
+}
+
+.topbar-kicker {
+    display: block;
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 2px;
+}
+
+.topbar-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.topbar-meta span {
+    padding: 6px 9px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.72);
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.topbar-meta .status-dot {
+    color: #0f766e;
+    border-color: rgba(42, 169, 161, 0.24);
+    background: rgba(42, 169, 161, 0.10);
+}
+
+h1, h2, h3 {
+    color: var(--navy);
+    letter-spacing: 0;
+}
+
+h1 {
+    font-size: 2.1rem;
+    font-weight: 900;
+}
+
+p, label, span {
+    color: var(--ink);
+}
+
+div[data-testid="stCaptionContainer"] p {
+    color: var(--muted);
+}
+
+.page-hero,
+.login-shell,
+.module-header {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background:
+        linear-gradient(90deg, rgba(255, 253, 248, 0.98) 0%, rgba(255, 253, 248, 0.88) 45%, rgba(255, 253, 248, 0.24) 100%),
+        url("luxury-cyber-hero.svg");
+    background-size: cover;
+    background-position: center;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    position: relative;
+}
+
+.page-hero {
+    padding: 34px 36px;
+    min-height: 260px;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 22px;
+}
+
+.module-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 22px;
+    margin-bottom: 18px;
+}
+
+.module-icon {
+    display: grid;
+    place-items: center;
+    width: 62px;
+    height: 62px;
+    border-radius: 8px;
+    color: var(--navy);
+    background: linear-gradient(135deg, #f5dfab, var(--gold));
+    font-size: 28px;
+    font-weight: 900;
+    flex: 0 0 auto;
+}
+
+.module-copy h1 {
+    margin: 2px 0 5px;
+    font-size: 1.9rem;
+}
+
+.module-copy p {
+    margin: 0;
+    max-width: 840px;
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+.module-badge,
+.eyebrow {
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+.page-hero h1,
+.login-brand h1 {
+    margin: 4px 0 8px;
+}
+
+.page-hero p,
+.login-brand p {
+    max-width: 760px;
+    color: #425168;
+    margin: 0;
+    line-height: 1.55;
+}
+
+.login-v2 {
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 22px;
+    padding: 36px;
+    margin-bottom: 20px;
+}
+
+.login-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.login-brand h1 {
+    font-size: 2.75rem;
+}
+
+.login-signal-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    max-width: 760px;
+}
+
+.login-signal-row div {
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    background: rgba(255, 253, 248, 0.68);
+    backdrop-filter: blur(14px);
+}
+
+.login-signal-row strong {
+    display: block;
+    color: var(--gold);
+    font-size: 18px;
+    line-height: 1;
+}
+
+.login-signal-row span {
+    display: block;
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+div[data-testid="stForm"],
+div[data-testid="stExpander"],
+div[data-testid="metric-container"] {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--panel);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 16px 42px rgba(16, 32, 51, 0.08);
+}
+
+div[data-testid="metric-container"] {
+    padding: 1rem;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+div[data-testid="metric-container"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 22px 48px rgba(16, 32, 51, 0.13);
+}
+
+div[data-testid="metric-container"] label {
+    color: var(--muted);
+}
+
+div[data-testid="metric-container"] [data-testid="stMetricValue"] {
+    color: var(--navy);
+}
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin: 18px 0 12px;
+}
+
+.mission-card {
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: rgba(255, 253, 248, 0.78);
+    box-shadow: 0 16px 38px rgba(16, 32, 51, 0.08);
+    transition: transform 160ms ease, border-color 160ms ease;
+}
+
+.mission-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(184, 138, 61, 0.38);
+}
+
+.mission-card span {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 950;
+}
+
+.mission-card strong {
+    display: block;
+    color: var(--navy);
+    margin-top: 6px;
+    font-size: 16px;
+}
+
+.mission-card p {
+    color: var(--muted);
+    margin: 6px 0 0;
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.stButton > button,
+.stDownloadButton > button,
+button[kind="primary"],
+button[data-testid="baseButton-secondaryFormSubmit"] {
+    background: linear-gradient(135deg, var(--navy), var(--navy-2));
+    border: 1px solid rgba(16, 32, 51, 0.14);
+    border-radius: 8px;
+    color: #ffffff;
+    font-weight: 850;
+    min-height: 2.55rem;
+    box-shadow: 0 14px 28px rgba(16, 32, 51, 0.14);
+}
+
+.stButton > button:hover,
+.stDownloadButton > button:hover,
+button[data-testid="baseButton-secondaryFormSubmit"]:hover {
+    border-color: rgba(184, 138, 61, 0.65);
+    color: #ffffff;
+    filter: brightness(1.06);
+}
+
+div[data-testid="stAlert"] {
+    border-radius: 8px;
+    border: 1px solid rgba(16, 32, 51, 0.08);
+}
+
+div[data-testid="stDataFrame"],
+div[data-testid="stTable"] {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 16px 40px rgba(16, 32, 51, 0.08);
+}
+
+div[data-testid="stTabs"] button {
+    color: var(--muted);
+    font-weight: 760;
+}
+
+div[data-testid="stTabs"] button[aria-selected="true"] {
+    color: var(--navy);
+}
+
+section[data-testid="stFileUploaderDropzone"] {
+    border: 1px dashed rgba(184, 138, 61, 0.42);
+    border-radius: 8px;
+    background: rgba(255, 253, 248, 0.66);
+}
+
+hr {
+    border-color: var(--line);
+}
+
+input,
+textarea,
+div[data-baseweb="select"] > div {
+    border-radius: 8px;
+}
+
+div[data-baseweb="input"] input,
+div[data-baseweb="textarea"] textarea {
+    background: #fffdf8;
+    color: var(--ink);
+}
+
+.filter-panel {
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: rgba(255, 253, 248, 0.78);
+    box-shadow: 0 16px 40px rgba(16, 32, 51, 0.08);
+    margin: 16px 0;
+}
+
+.filter-panel h3 {
+    margin: 0 0 4px;
+}
+
+.filter-panel p {
+    margin: 0 0 12px;
+    color: var(--muted);
+}
+
+@media (max-width: 900px) {
+    .mission-grid,
+    .login-signal-row {
+        grid-template-columns: 1fr;
+    }
+
+    .login-brand,
+    .module-header,
+    .app-topbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .login-brand h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Dark CyberShield app theme matching the login screen */
+.stApp:not(:has(.login-page-v3)) {
+    background:
+        linear-gradient(90deg, rgba(2, 6, 18, 0.88), rgba(2, 6, 18, 0.78)),
+        url("login-cybershield.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #ffffff;
+}
+
+.stApp:not(:has(.login-page-v3))::before {
+    background-image:
+        radial-gradient(circle, rgba(0, 191, 255, 0.16) 1px, transparent 1px),
+        linear-gradient(rgba(0, 212, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 212, 255, 0.045) 1px, transparent 1px);
+    background-size: 56px 56px, 42px 42px, 42px 42px;
+    opacity: 0.72;
+}
+
+.stApp:not(:has(.login-page-v3)) section[data-testid="stSidebar"] {
+    background:
+        linear-gradient(180deg, rgba(3, 10, 28, 0.94), rgba(3, 10, 28, 0.86)),
+        url("login-cybershield.png");
+    background-size: cover;
+    background-position: left center;
+    border-right: 1px solid rgba(0, 212, 255, 0.24);
+    box-shadow: 18px 0 60px rgba(0, 0, 0, 0.36);
+}
+
+.stApp:not(:has(.login-page-v3)) .app-topbar,
+.stApp:not(:has(.login-page-v3)) .module-header,
+.stApp:not(:has(.login-page-v3)) div[data-testid="stForm"],
+.stApp:not(:has(.login-page-v3)) div[data-testid="stExpander"],
+.stApp:not(:has(.login-page-v3)) div[data-testid="metric-container"],
+.stApp:not(:has(.login-page-v3)) .mission-card,
+.stApp:not(:has(.login-page-v3)) .filter-panel {
+    border: 1px solid rgba(0, 212, 255, 0.24);
+    background:
+        radial-gradient(circle at 100% 100%, rgba(0, 212, 255, 0.10), transparent 34%),
+        rgba(3, 10, 28, 0.74);
+    backdrop-filter: blur(18px);
+    box-shadow:
+        0 0 0 1px rgba(133, 88, 255, 0.12),
+        0 18px 54px rgba(0, 0, 0, 0.32);
+}
+
+.stApp:not(:has(.login-page-v3)) .page-hero {
+    border: 1px solid rgba(0, 212, 255, 0.36);
+    background:
+        linear-gradient(90deg, rgba(3, 10, 28, 0.94) 0%, rgba(3, 10, 28, 0.78) 48%, rgba(3, 10, 28, 0.28) 100%),
+        url("login-cybershield.png");
+    background-size: cover;
+    background-position: center;
+    box-shadow:
+        0 0 0 1px rgba(133, 88, 255, 0.16),
+        0 0 54px rgba(0, 212, 255, 0.16),
+        0 28px 80px rgba(0, 0, 0, 0.42);
+}
+
+.stApp:not(:has(.login-page-v3)) .module-header {
+    background:
+        linear-gradient(90deg, rgba(3, 10, 28, 0.92), rgba(3, 10, 28, 0.70)),
+        url("login-cybershield.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.stApp:not(:has(.login-page-v3)) h1,
+.stApp:not(:has(.login-page-v3)) h2,
+.stApp:not(:has(.login-page-v3)) h3,
+.stApp:not(:has(.login-page-v3)) .app-topbar strong,
+.stApp:not(:has(.login-page-v3)) .module-copy h1,
+.stApp:not(:has(.login-page-v3)) .mission-card strong,
+.stApp:not(:has(.login-page-v3)) div[data-testid="metric-container"] [data-testid="stMetricValue"] {
+    color: #ffffff;
+}
+
+.stApp:not(:has(.login-page-v3)) p,
+.stApp:not(:has(.login-page-v3)) label,
+.stApp:not(:has(.login-page-v3)) span,
+.stApp:not(:has(.login-page-v3)) .module-copy p,
+.stApp:not(:has(.login-page-v3)) .page-hero p,
+.stApp:not(:has(.login-page-v3)) .mission-card p,
+.stApp:not(:has(.login-page-v3)) .filter-panel p {
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.stApp:not(:has(.login-page-v3)) .module-badge,
+.stApp:not(:has(.login-page-v3)) .eyebrow,
+.stApp:not(:has(.login-page-v3)) .topbar-kicker,
+.stApp:not(:has(.login-page-v3)) .mission-card span,
+.stApp:not(:has(.login-page-v3)) .user-role {
+    color: #8beeff;
+}
+
+.stApp:not(:has(.login-page-v3)) .module-icon,
+.stApp:not(:has(.login-page-v3)) .sidebar-logo,
+.stApp:not(:has(.login-page-v3)) .brand-mark {
+    background: linear-gradient(135deg, #7c3cff 0%, #09b9ff 52%, #11d6e5 100%);
+    color: #ffffff;
+    box-shadow: 0 0 34px rgba(0, 212, 255, 0.26);
+}
+
+.stApp:not(:has(.login-page-v3)) .topbar-meta span {
+    color: rgba(255, 255, 255, 0.78);
+    border-color: rgba(0, 212, 255, 0.20);
+    background: rgba(1, 9, 26, 0.42);
+}
+
+.stApp:not(:has(.login-page-v3)) .topbar-meta .status-dot {
+    color: #8beeff;
+    border-color: rgba(0, 212, 255, 0.34);
+    background: rgba(0, 212, 255, 0.10);
+}
+
+.stApp:not(:has(.login-page-v3)) .stButton > button,
+.stApp:not(:has(.login-page-v3)) .stDownloadButton > button,
+.stApp:not(:has(.login-page-v3)) button[kind="primary"],
+.stApp:not(:has(.login-page-v3)) button[data-testid="baseButton-secondaryFormSubmit"] {
+    background: linear-gradient(135deg, #7c3cff 0%, #09b9ff 52%, #11d6e5 100%);
+    border: 1px solid rgba(0, 212, 255, 0.62);
+    color: #ffffff;
+    box-shadow: 0 18px 46px rgba(0, 212, 255, 0.18);
+}
+
+.stApp:not(:has(.login-page-v3)) input,
+.stApp:not(:has(.login-page-v3)) textarea,
+.stApp:not(:has(.login-page-v3)) div[data-baseweb="select"] > div,
+.stApp:not(:has(.login-page-v3)) div[data-baseweb="input"] input,
+.stApp:not(:has(.login-page-v3)) div[data-baseweb="textarea"] textarea {
+    background: rgba(1, 9, 26, 0.74);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.stApp:not(:has(.login-page-v3)) section[data-testid="stFileUploaderDropzone"] {
+    border: 1px dashed rgba(0, 212, 255, 0.42);
+    background: rgba(3, 10, 28, 0.58);
+}
+
+.stApp:not(:has(.login-page-v3)) div[data-testid="stDataFrame"],
+.stApp:not(:has(.login-page-v3)) div[data-testid="stTable"] {
+    border-color: rgba(0, 212, 255, 0.20);
+    box-shadow: 0 18px 54px rgba(0, 0, 0, 0.30);
+}
+
+.ai-image-strip {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 18px;
+    margin: 18px 0;
+}
+
+.ai-image-card {
+    min-height: 220px;
+    border: 1px solid rgba(0, 212, 255, 0.24);
+    border-radius: 14px;
+    background:
+        linear-gradient(90deg, rgba(3, 10, 28, 0.82), rgba(3, 10, 28, 0.30)),
+        url("login-cybershield.png");
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.34);
+}
+
+.ai-stat-card {
+    padding: 18px;
+    border: 1px solid rgba(0, 212, 255, 0.24);
+    border-radius: 14px;
+    background: rgba(3, 10, 28, 0.72);
+    backdrop-filter: blur(18px);
+}
+
+.ai-stat-card strong {
+    display: block;
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.ai-stat-card span {
+    display: block;
+    color: rgba(255, 255, 255, 0.72);
+    line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+    .ai-image-strip {
+        grid-template-columns: 1fr;
+    }
+}
+
+.stApp:has(.login-page-v3) {
+    background:
+        linear-gradient(90deg, rgba(2, 6, 18, 0.74), rgba(2, 6, 18, 0.82)),
+        url("login-cybershield.png");
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+}
+
+.stApp:has(.login-page-v3)::before {
+    background-image:
+        radial-gradient(circle, rgba(0, 191, 255, 0.16) 1px, transparent 1px);
+    background-size: 56px 56px;
+    opacity: 0.7;
+}
+
+.stApp:has(.login-page-v3) .block-container {
+    max-width: 1420px;
+    padding-top: 3.2rem;
+}
+
+.login-visual-card {
+    min-height: 720px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 34px 22px 28px;
+}
+
+.login-brand-lock {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.brand-shield {
+    display: grid;
+    place-items: center;
+    width: 108px;
+    height: 108px;
+    border-radius: 28px;
+    border: 2px solid rgba(0, 212, 255, 0.75);
+    background: rgba(0, 64, 128, 0.18);
+    color: #63e7ff;
+    font-weight: 950;
+    font-size: 34px;
+    box-shadow: 0 0 34px rgba(0, 212, 255, 0.34);
+}
+
+.brand-title {
+    color: #ffffff;
+    font-size: 4.2rem;
+    line-height: 0.95;
+    font-weight: 900;
+    letter-spacing: 0;
+}
+
+.brand-title span {
+    color: #12c7ff;
+}
+
+.brand-subtitle {
+    margin-top: 18px;
+    color: #8c4dff;
+    letter-spacing: 0.52em;
+    font-size: 1.55rem;
+    font-weight: 900;
+}
+
+.login-lead {
+    max-width: 620px;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 1.12rem;
+    line-height: 1.55;
+    margin: 24px 0;
+}
+
+.login-feature-cloud {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    max-width: 720px;
+    margin-top: auto;
+}
+
+.login-feature-cloud span {
+    color: #8beeff;
+    border: 1px solid rgba(0, 212, 255, 0.42);
+    background: rgba(0, 20, 48, 0.44);
+    border-radius: 8px;
+    padding: 10px 13px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 850;
+}
+
+.login-compliance-row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 52px;
+}
+
+.login-compliance-row span {
+    color: rgba(255, 255, 255, 0.70);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 999px;
+    padding: 9px 13px;
+    font-size: 13px;
+}
+
+.login-panel-heading {
+    margin: 36px 0 18px;
+    padding: 0 6px;
+}
+
+.login-panel-heading h1 {
+    color: #ffffff;
+    font-size: 2.15rem;
+    margin-bottom: 8px;
+}
+
+.login-panel-heading p {
+    color: rgba(255, 255, 255, 0.72);
+    margin: 0;
+}
+
+.stApp:has(.login-page-v3) div[data-testid="stVerticalBlock"]:has(.login-panel-heading) {
+    border: 1px solid rgba(0, 212, 255, 0.54);
+    border-radius: 28px;
+    padding: 34px;
+    background:
+        radial-gradient(circle at 100% 100%, rgba(0, 212, 255, 0.18), transparent 34%),
+        rgba(3, 10, 28, 0.72);
+    backdrop-filter: blur(18px);
+    box-shadow:
+        0 0 0 1px rgba(133, 88, 255, 0.30),
+        0 0 44px rgba(0, 212, 255, 0.26),
+        0 32px 90px rgba(0, 0, 0, 0.46);
+}
+
+.stApp:has(.login-page-v3) div[data-testid="stForm"] {
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+
+.stApp:has(.login-page-v3) div[data-testid="stTabs"] button {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.stApp:has(.login-page-v3) div[data-testid="stTabs"] button[aria-selected="true"] {
+    color: #ffffff;
+}
+
+.stApp:has(.login-page-v3) label,
+.stApp:has(.login-page-v3) p,
+.stApp:has(.login-page-v3) span {
+    color: rgba(255, 255, 255, 0.84);
+}
+
+.stApp:has(.login-page-v3) div[data-baseweb="input"] input,
+.stApp:has(.login-page-v3) div[data-baseweb="textarea"] textarea {
+    min-height: 58px;
+    background: rgba(1, 9, 26, 0.72);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.stApp:has(.login-page-v3) .stButton > button,
+.stApp:has(.login-page-v3) button[data-testid="baseButton-secondaryFormSubmit"] {
+    min-height: 64px;
+    border: 1px solid rgba(0, 212, 255, 0.70);
+    background: linear-gradient(135deg, #7c3cff 0%, #09b9ff 52%, #11d6e5 100%);
+    color: #ffffff;
+    font-size: 1.05rem;
+    box-shadow: 0 18px 46px rgba(0, 212, 255, 0.26);
+}
+
+.login-security-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.login-security-row div {
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.login-security-row div:last-child {
+    border-right: 0;
+}
+
+.login-security-row strong {
+    display: block;
+    color: #8beeff;
+    font-size: 13px;
+}
+
+.login-security-row span {
+    display: block;
+    margin-top: 5px;
+    color: rgba(255, 255, 255, 0.64);
+    font-size: 12px;
+}
+
+@media (max-width: 900px) {
+    .login-visual-card {
+        min-height: auto;
+        padding: 18px 0;
+    }
+
+    .brand-title {
+        font-size: 2.5rem;
+    }
+
+    .brand-subtitle {
+        font-size: 1rem;
+        letter-spacing: 0.34em;
+    }
+
+    .login-security-row {
+        grid-template-columns: 1fr;
+    }
+
+    .login-security-row div {
+        border-right: 0;
+    }
+}
+
+/* Final CyberShield premium pass */
+.stApp:not(:has(.login-page-v3)) {
+    background:
+        radial-gradient(circle at 16% 10%, rgba(124, 60, 255, 0.20), transparent 28%),
+        radial-gradient(circle at 86% 12%, rgba(0, 212, 255, 0.20), transparent 30%),
+        linear-gradient(90deg, rgba(1, 5, 16, 0.94), rgba(2, 10, 26, 0.88)),
+        url("login-cybershield.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.stApp:not(:has(.login-page-v3)) .block-container {
+    max-width: 1320px;
+    padding-top: 1rem;
+}
+
+.stApp:not(:has(.login-page-v3)) section[data-testid="stSidebar"] {
+    background:
+        linear-gradient(180deg, rgba(1, 7, 22, 0.96), rgba(2, 13, 34, 0.90)),
+        url("login-cybershield.png");
+    background-size: cover;
+    background-position: 25% center;
+}
+
+.stApp:not(:has(.login-page-v3)) .sidebar-brand {
+    border-bottom: 1px solid rgba(0, 212, 255, 0.18);
+    margin-bottom: 10px;
+    padding-bottom: 18px;
+}
+
+.stApp:not(:has(.login-page-v3)) .sidebar-logo,
+.stApp:not(:has(.login-page-v3)) .brand-mark,
+.stApp:not(:has(.login-page-v3)) .module-icon {
+    border: 1px solid rgba(118, 231, 255, 0.75);
+    background:
+        radial-gradient(circle at 35% 28%, rgba(255, 255, 255, 0.34), transparent 24%),
+        linear-gradient(135deg, #7c3cff 0%, #00b7ff 50%, #0fe6e6 100%);
+    color: #ffffff;
+    box-shadow:
+        0 0 0 1px rgba(124, 60, 255, 0.24),
+        0 0 30px rgba(0, 212, 255, 0.34);
+}
+
+.stApp:not(:has(.login-page-v3)) section[data-testid="stSidebar"] div[role="radiogroup"] label {
+    min-height: 46px;
+    border-radius: 10px;
+    border-color: rgba(0, 212, 255, 0.12);
+    background: rgba(1, 9, 26, 0.48);
+}
+
+.stApp:not(:has(.login-page-v3)) section[data-testid="stSidebar"] div[role="radiogroup"] label:has(input:checked) {
+    border-color: rgba(0, 212, 255, 0.72);
+    background:
+        linear-gradient(90deg, rgba(124, 60, 255, 0.28), rgba(0, 212, 255, 0.16)),
+        rgba(1, 9, 26, 0.68);
+    box-shadow: 0 0 22px rgba(0, 212, 255, 0.14);
+}
+
+.stApp:not(:has(.login-page-v3)) .app-topbar,
+.stApp:not(:has(.login-page-v3)) .module-header,
+.stApp:not(:has(.login-page-v3)) .page-hero,
+.stApp:not(:has(.login-page-v3)) div[data-testid="stForm"],
+.stApp:not(:has(.login-page-v3)) div[data-testid="stExpander"],
+.stApp:not(:has(.login-page-v3)) div[data-testid="metric-container"],
+.stApp:not(:has(.login-page-v3)) .mission-card,
+.stApp:not(:has(.login-page-v3)) .filter-panel,
+.stApp:not(:has(.login-page-v3)) .ai-stat-card {
+    border-radius: 14px;
+    border: 1px solid rgba(0, 212, 255, 0.24);
+    background:
+        linear-gradient(135deg, rgba(5, 15, 38, 0.84), rgba(2, 8, 24, 0.72)),
+        radial-gradient(circle at 100% 0%, rgba(124, 60, 255, 0.20), transparent 30%);
+    backdrop-filter: blur(18px);
+    box-shadow:
+        0 0 0 1px rgba(124, 60, 255, 0.10),
+        0 22px 70px rgba(0, 0, 0, 0.38);
+}
+
+.stApp:not(:has(.login-page-v3)) .page-hero,
+.stApp:not(:has(.login-page-v3)) .module-header {
+    background:
+        linear-gradient(90deg, rgba(2, 8, 24, 0.96) 0%, rgba(2, 8, 24, 0.76) 48%, rgba(2, 8, 24, 0.24) 100%),
+        url("login-cybershield.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.stApp:not(:has(.login-page-v3)) .page-hero {
+    min-height: 300px;
+    align-items: center;
+}
+
+.stApp:not(:has(.login-page-v3)) .page-hero h1 {
+    max-width: 760px;
+    font-size: clamp(2.1rem, 4vw, 4.1rem);
+    line-height: 1.02;
+    margin-bottom: 14px;
+}
+
+.stApp:not(:has(.login-page-v3)) .page-hero p,
+.stApp:not(:has(.login-page-v3)) .module-copy p {
+    max-width: 760px;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 1.02rem;
+}
+
+.stApp:not(:has(.login-page-v3)) .eyebrow,
+.stApp:not(:has(.login-page-v3)) .module-badge,
+.stApp:not(:has(.login-page-v3)) .topbar-kicker {
+    color: #10e3ff;
+    text-shadow: 0 0 18px rgba(0, 212, 255, 0.36);
+}
+
+.stApp:not(:has(.login-page-v3)) h1,
+.stApp:not(:has(.login-page-v3)) h2,
+.stApp:not(:has(.login-page-v3)) h3,
+.stApp:not(:has(.login-page-v3)) .mission-card strong,
+.stApp:not(:has(.login-page-v3)) .app-topbar strong,
+.stApp:not(:has(.login-page-v3)) .sidebar-title {
+    color: #ffffff;
+}
+
+.stApp:not(:has(.login-page-v3)) p,
+.stApp:not(:has(.login-page-v3)) label,
+.stApp:not(:has(.login-page-v3)) span,
+.stApp:not(:has(.login-page-v3)) .mission-card p,
+.stApp:not(:has(.login-page-v3)) .filter-panel p,
+.stApp:not(:has(.login-page-v3)) .sidebar-subtitle {
+    color: rgba(255, 255, 255, 0.74);
+}
+
+.stApp:not(:has(.login-page-v3)) div[data-testid="metric-container"] {
+    min-height: 118px;
+}
+
+.stApp:not(:has(.login-page-v3)) div[data-testid="metric-container"] [data-testid="stMetricValue"] {
+    color: #ffffff;
+    font-weight: 900;
+}
+
+.stApp:not(:has(.login-page-v3)) .mission-grid {
+    gap: 16px;
+}
+
+.stApp:not(:has(.login-page-v3)) .mission-card {
+    min-height: 146px;
+}
+
+.stApp:not(:has(.login-page-v3)) .mission-card:hover,
+.stApp:not(:has(.login-page-v3)) div[data-testid="metric-container"]:hover {
+    transform: translateY(-3px);
+    border-color: rgba(0, 212, 255, 0.54);
+    box-shadow:
+        0 0 0 1px rgba(124, 60, 255, 0.18),
+        0 26px 78px rgba(0, 0, 0, 0.44),
+        0 0 34px rgba(0, 212, 255, 0.14);
+}
+
+.stApp:not(:has(.login-page-v3)) .ai-image-strip {
+    grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
+    margin: 22px 0 24px;
+}
+
+.stApp:not(:has(.login-page-v3)) .ai-image-card {
+    min-height: 300px;
+    border-radius: 16px;
+    border-color: rgba(0, 212, 255, 0.38);
+    background:
+        linear-gradient(90deg, rgba(2, 8, 24, 0.58), rgba(2, 8, 24, 0.08)),
+        url("login-cybershield.png");
+    background-size: cover;
+    background-position: center;
+    box-shadow:
+        0 0 0 1px rgba(124, 60, 255, 0.16),
+        0 26px 86px rgba(0, 0, 0, 0.46),
+        0 0 46px rgba(0, 212, 255, 0.16);
+}
+
+.stApp:not(:has(.login-page-v3)) .ai-stat-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 300px;
+    padding: 28px;
+}
+
+.stApp:not(:has(.login-page-v3)) .ai-stat-card strong {
+    font-size: 1.45rem;
+    line-height: 1.2;
+}
+
+.stApp:not(:has(.login-page-v3)) .stButton > button,
+.stApp:not(:has(.login-page-v3)) .stDownloadButton > button,
+.stApp:not(:has(.login-page-v3)) button[kind="primary"],
+.stApp:not(:has(.login-page-v3)) button[data-testid="baseButton-secondaryFormSubmit"] {
+    border-radius: 12px;
+    min-height: 44px;
+    background: linear-gradient(135deg, #7c3cff 0%, #09b9ff 52%, #11d6e5 100%);
+    color: #ffffff;
+    font-weight: 900;
+    box-shadow: 0 18px 44px rgba(0, 212, 255, 0.20);
+}
+
+.stApp:not(:has(.login-page-v3)) input,
+.stApp:not(:has(.login-page-v3)) textarea,
+.stApp:not(:has(.login-page-v3)) div[data-baseweb="select"] > div,
+.stApp:not(:has(.login-page-v3)) div[data-baseweb="input"] input,
+.stApp:not(:has(.login-page-v3)) div[data-baseweb="textarea"] textarea {
+    border-radius: 12px;
+    background: rgba(1, 8, 23, 0.82);
+    color: #ffffff;
+    border: 1px solid rgba(0, 212, 255, 0.20);
+}
+
+.stApp:not(:has(.login-page-v3)) div[data-baseweb="tag"] {
+    background: rgba(0, 212, 255, 0.14);
+    border: 1px solid rgba(0, 212, 255, 0.24);
+}
+
+.stApp:not(:has(.login-page-v3)) section[data-testid="stFileUploaderDropzone"] {
+    min-height: 132px;
+    border-radius: 14px;
+    border: 1px dashed rgba(0, 212, 255, 0.54);
+    background:
+        linear-gradient(135deg, rgba(124, 60, 255, 0.14), rgba(0, 212, 255, 0.08)),
+        rgba(2, 8, 24, 0.72);
+}
+
+.stApp:not(:has(.login-page-v3)) div[data-testid="stDataFrame"],
+.stApp:not(:has(.login-page-v3)) div[data-testid="stTable"] {
+    border-radius: 14px;
+    border: 1px solid rgba(0, 212, 255, 0.22);
+    background: rgba(2, 8, 24, 0.72);
+}
+
+.stApp:not(:has(.login-page-v3)) div[data-testid="stAlert"] {
+    border-radius: 12px;
+    background: rgba(2, 8, 24, 0.80);
+    border: 1px solid rgba(0, 212, 255, 0.18);
+}
+
+@media (max-width: 900px) {
+    .stApp:not(:has(.login-page-v3)) .ai-image-strip {
+        grid-template-columns: 1fr;
+    }
+
+    .stApp:not(:has(.login-page-v3)) .page-hero,
+    .stApp:not(:has(.login-page-v3)) .ai-image-card,
+    .stApp:not(:has(.login-page-v3)) .ai-stat-card {
+        min-height: 220px;
+    }
+}
+
+/* No-picture app override: keep the premium dark UI, remove dashboard/background images */
+.stApp:not(:has(.login-page-v3)) {
+    background:
+        radial-gradient(circle at 14% 8%, rgba(124, 60, 255, 0.22), transparent 30%),
+        radial-gradient(circle at 88% 10%, rgba(0, 212, 255, 0.20), transparent 28%),
+        radial-gradient(circle at 48% 92%, rgba(17, 214, 229, 0.10), transparent 34%),
+        linear-gradient(135deg, #020617 0%, #050b1c 46%, #020617 100%);
+    background-attachment: fixed;
+}
+
+.stApp:not(:has(.login-page-v3)) section[data-testid="stSidebar"],
+.stApp:not(:has(.login-page-v3)) .page-hero,
+.stApp:not(:has(.login-page-v3)) .module-header {
+    background:
+        linear-gradient(135deg, rgba(5, 15, 38, 0.92), rgba(2, 8, 24, 0.76)),
+        radial-gradient(circle at 100% 0%, rgba(0, 212, 255, 0.15), transparent 34%),
+        radial-gradient(circle at 0% 100%, rgba(124, 60, 255, 0.16), transparent 38%);
+    background-size: auto;
+    background-position: center;
+}
+
+.stApp:not(:has(.login-page-v3)) .page-hero {
+    min-height: 240px;
+}
+
+.stApp:not(:has(.login-page-v3)) .ai-image-strip,
+.stApp:not(:has(.login-page-v3)) .ai-image-card {
+    display: none;
+}
